@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}<title>Student - Login</title> {% endblock %}
+{% block main_content %}
+
+{% for category, message in get_flashed_messages(with_categories=True) %}
+      <div class="alert-{{category}}">{{category | upper}}: {{ message }}</div>
+    {% endfor %}
+
+<div> <p class="text-center my-3">>
+    <h1 class="badge bg-primary text-wrap" style="width: 6rem;"> My cart </h1> <button type="button" class="btn btn-danger">BUY</button>
+</p>
+    <p> <a href="#" class="text-decoration-none">Livrée le si vous commander avant le 21 dacembre</a></p>
+
+</div>
+<div>
+<thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price/Unit</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+      {% for item in product %}
+      <tr>
+          <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{student.age}}</td>
+      </tr>
+      {% endfor %}
+  </table>
+</div>
+{% endblock %}
